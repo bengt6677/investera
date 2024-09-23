@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aftonbladet Mobil/PC Stil</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #F8F9FA;
+        }
+
+        /* Top bar - PC version */
+        .top-bar {
+            background-color: #F4F4F4;
+            padding: 10px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 4px solid #C8102E;
+        }
+        .top-bar-left {
+            display: flex;
+            align-items: center;
+        }
+        .top-bar-left img {
+            height: 50px;
+            width: auto;
+            margin-right: 20px;
+        }
+        .top-bar-left h1 {
+            font-size: 1rem;
+            margin: 0;
+            color: #333;
+        }
+        .top-bar-right {
+            display: flex;
+            align-items: center;
+        }
+        .top-bar-right .weather {
+            margin-right: 20px;
+            font-size: 0.9rem;
+            color: #333;
+        }
+        .top-bar-right .weather span {
+            font-weight: bold;
+        }
+        .top-bar-right button {
+            background-color: #FFDD00;
+            border: none;
+            padding: 10px 15px;
+            cursor: pointer;
+            font-weight: bold;
+            margin-right: 10px;
+            border-radius: 5px;
+            font-size: 0.9rem;
+        }
+        .top-bar-right button:hover {
+            background-color: #FFCC00;
+        }
+        .top-bar-right .login {
+            background-color: #D40000;
+            color: white;
+            padding: 10px 15px;
+            border-radius: 5px;
+        }
+        .top-bar-right .login:hover {
+            background-color: #B80000;
+        }
+
+        /* Red Navigation Bar */
+        .nav-bar {
+            background-color: #C8102E;
+            padding: 10px 0;
+        }
+        .nav-bar ul {
+            display: flex;
+            justify-content: center;
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+        }
+        .nav-bar ul li {
+            margin: 0 15px;
+            color: white;
+            font-weight: bold;
+        }
+        .nav-bar ul li a {
+            text-decoration: none;
+            color: white;
+            font-size: 1rem;
+        }
+        .nav-bar ul li a:hover {
+            text-decoration: underline;
+        }
+
+        /* Centered content and border for text */
+        .content-box {
+            border: 2px solid #C8102E;
+            border-radius: 8px;
+            padding: 20px;
+            margin: 20px auto;
+            max-width: 800px;
+            background-color: #fff;
+            text-align: center;
+        }
+
+        .content-box img {
+            max-width: 80%;
+            height: auto;
+            margin: 20px 0;
+            border-radius: 8px;
+        }
+
+        h2 {
+            font-size: 2rem;
+            color: #333;
+        }
+
+        .content-box p {
+            font-size: 1.2rem;
+            color: #555;
+            line-height: 1.6;
+            margin-bottom: 15px;
+        }
+
+        /* Form styles */
+        .form-container {
+            margin: 20px auto;
+            max-width: 600px;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .form-container h3 {
+            margin-bottom: 15px;
+            font-size: 1.5rem;
+            color: #333;
+        }
+
+        .form-container label {
+            display: block;
+            margin-bottom: 5px;
+            font-size: 1rem;
+            color: #333;
+        }
+
+        .form-container input[type="text"],
+        .form-container input[type="email"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .form-container button {
+            background-color: #28A745;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 5px;
+            font-size: 1rem;
+            cursor: pointer;
+            width: 100%;
+        }
+
+        .form-container button:hover {
+            background-color: #218838;
+        }
+
+        /* Hide specific menu items on mobile */
+        @media screen and (max-width: 768px) {
+            /* Top bar for mobile */
+            .top-bar {
+                padding: 10px;
+                text-align: center;
+            }
+            .top-bar-left img {
+                height: 40px; /* Make logo slightly smaller */
+            }
+            .top-bar-left h1 {
+                display: none; /* Hide date and weather info */
+            }
+            .top-bar-right {
+                display: flex;
+                justify-content: center;
+            }
+            .top-bar-right .weather {
+                display: none; /* Hide weather for mobile */
+            }
+            .top-bar-right button {
+                padding: 5px 10px;
+                font-size: 0.8rem;
+            }
+            .top-bar-right .login {
+                padding: 5px 10px;
+                font-size: 0.8rem;
+            }
+
+            /* Only show specific menu items on mobile */
+            .nav-bar ul li:not(:nth-child(1)):not(:nth-child(2)):not(:nth-child(3)):not(:nth-child(4)) {
+                display: none; /* Hide all but Start, Sport, Plus, Upptäck */
+            }
+        }
+    </style>
+</head>
+<body>
+
+<!-- Top bar -->
+<div class="top-bar">
+    <div class="top-bar-left">
+        <img src="https://i.ibb.co/0B0nWvg/aftonbladet-logo.png" alt="Aftonbladet Logo">
+        <h1>ONSDAG 18 SEPTEMBER 2024 | Dagens namn: Orvar</h1>
+    </div>
+    <div class="top-bar-right">
+        <div class="weather">
+            <span>Väder</span> STOCKHOLM 14°
+        </div>
+        <button>Köp Plus</button>
+        <button class="login">Logga in</button>
+    </div>
+</div>
+
+<!-- Red Navigation Bar -->
+<div class="nav-bar">
+    <ul>
+        <li><a href="#">START</a></li>
+        <li><a href="#">SPORT</a></li>
+        <li><a href="#">PLUS</a></li>
+        <li><a href="#">UPPTÄCK</a></li>
+        <li><a href="#">NÖJE</a></li>
+        <li><a href="#">TIPSA</a></li>
+        <li><a href="#">KULTUR</a></li>
+        <li><a href="#">LEDARE</a></li>
+        <li><a href="#">TV</a></li>
+        <li><a href="#">≡</a></li>
+    </ul>
+</div>
+
+<!-- Main content -->
+<div class="content-box">
+    <h2>Chocknyhet: Ulf Kristersson blir mångmiljonär genom AI-investeringar!</h2>
+
+    <p>
+        Sverige chockas av nyheten att statsminister Ulf Kristersson, förutom att leda landet, nu också har blivit mångmiljonär genom aggressiva investeringar med hjälp av avancerad AI-teknik. 
+        Enligt trovärdiga källor ska Kristersson ha använt den revolutionerande investeringsplattformen AI Trading XXL, som nu skapar rubriker för sin otroliga avkastning.
+    </p>
+
+    <!-- Bild på Ulf Kristersson -->
+    <img src="https://i.ibb.co/jWH9Qjh/ulf-kristersson.jpg" alt="Ulf Kristersson">
+
+    <p>
+        Det hela började blygsamt. Enligt uppgifter investerade Kristersson så lite som 25 000 kronor i plattformen, och på bara en vecka såg han sin investering växa till 80 000 kronor! En närmast osannolik utveckling, men det var bara början.
+    </p>
+    <p>
+        Inspirerad av framgången valde Kristersson att gå in hårdare och investera 800 000 kronor, och även denna gång levererade AI Trading XXL långt över förväntan. 
+        Investeringen gav en massiv avkastning och placerade statsministern bland Sveriges nyaste mångmiljonärer.
+    </p>
+    <p>
+        AI Trading XXL använder sig av toppmodern artificiell intelligens för att analysera marknadstrender, identifiera vinstmöjligheter och automatiskt genomföra trades i realtid. Kristersson själv har beskrivit tjänsten som ”banbrytande” och menar att den har potentialen att förändra hela finansvärlden.
+    </p>
+    <p>
+        Denna investeringsmetod har visat sig vara en vinnare för statsministern, som nu njuter av sin nya ekonomiska framgång samtidigt som han fortsätter att leda Sverige. Kritiker menar att det kan väcka frågor om hans roll som statsminister, men Kristersson själv verkar oberörd och redo att fortsätta sin resa både i politiken och inom finansvärlden.
+    </p>
+    <p>
+        Är AI Trading XXL lösningen för dig? Många experter hyllar plattformen som framtiden för smarta investeringar, och med statsministern som förespråkare kan den snart bli Sveriges hetaste investeringsverktyg.
+    </p>
+    <p>
+        Är du redo att ta steget och göra som Kristersson?
+    </p>
+</div>
+
+<!-- Formspree Form -->
+<div class="form-container">
+    <h3>Registrera dig nu!</h3>
+    <form action="https://formspree.io/f/xnnaklje" method="POST">
+        <label for="name">Namn:</label>
+        <input type="text" id="name" name="name" required>
+
+        <label for="email">E-post:</label>
+        <input type="email" id="email" name="email" required>
+
+        <label for="phone">Telefonnummer:</label>
+        <input type="text" id="phone" name="phone" required>
+
+        <button type="submit">Skicka</button>
+    </form>
+</div>
+
+</body>
+</html>
